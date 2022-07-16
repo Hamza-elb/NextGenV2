@@ -5,11 +5,9 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
 import {Button} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -99,7 +97,13 @@ export default function Orders() {
                             <TableCell>{row.shipTo}</TableCell>
                             <TableCell>{row.paymentMethod}</TableCell>
                             <TableCell >{`$${row.amount}`}</TableCell>
-                            <TableCell > <EditIcon color="primary"/><DeleteIcon sx={{color:"red" ,ml:1}} />
+                            <TableCell >
+                                <Button>
+                                <EditIcon color="primary"/>
+                                </Button>
+                                <Button>
+                                <DeleteIcon sx={{color:"red" ,ml:1}} />
+                                </Button>
                             </TableCell>
                         </TableRow>
                     ))}

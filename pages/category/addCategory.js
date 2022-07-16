@@ -1,21 +1,23 @@
-// @flow
 import * as React from 'react';
 import Container from "@mui/material/Container";
-import {CardContent, TextField} from "@mui/material";
+import {TextField} from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SendIcon from '@mui/icons-material/Send';
 import Link from "next/link";
+import Head from "next/head";
+
 
 
 export default function AddBook() {
 
-
-
     return (
         <>
+            <Head>
+                <title>Add Category</title>
+            </Head>
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <form>
                     <Box

@@ -15,10 +15,6 @@ import List from "@mui/material/List";
 import {mainListItems} from "./listItems";
 import MuiDrawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-
 import Link from "@mui/material/Link";
 
 
@@ -34,8 +30,6 @@ function Copyright(props) {
         </Typography>
     );
 }
-
-
 
 
 const drawerWidth = 240;

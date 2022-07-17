@@ -15,7 +15,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
-    return { id, date, name, shipTo, paymentMethod, amount };
+    return {id, date, name, shipTo, paymentMethod, amount};
 }
 
 const rows = [
@@ -63,53 +63,53 @@ export default function Orders() {
         <React.Fragment>
 
 
-                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                    <Link href="category/addCategory">
-                    <Button sx={{ display:"flex", float:"right"  }}
+            <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
+                <Link href="category/add">
+                    <Button sx={{display: "flex", float: "right"}}
                             variant="contained"
                             onClick=""
-                            endIcon={<AddIcon />}>
+                            endIcon={<AddIcon/>}>
                         Add Category
                     </Button>
-                    </Link>
-                    <Grid container spacing={1}>
-                        <Grid item xs={12}>
-                            <Paper sx={{ p: 3, display: 'flex', flexDirection: 'column' }}>
+                </Link>
+                <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                        <Paper sx={{p: 3, display: 'flex', flexDirection: 'column'}}>
 
-                                <Table size="small">
-                                    <TableHead>
-                                        <TableRow>
-                                            <TableCell>Id</TableCell>
-                                            <TableCell>Title</TableCell>
-                                            <TableCell>Slug</TableCell>
-                                            <TableCell>Actions</TableCell>
+                            <Table size="small">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Id</TableCell>
+                                        <TableCell>Title</TableCell>
+                                        <TableCell>Slug</TableCell>
+                                        <TableCell>Actions</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map((row) => (
+                                        <TableRow key={row.id}>
+                                            <TableCell>{row.id}</TableCell>
+                                            <TableCell>{row.date}</TableCell>
+                                            <TableCell>{row.name}</TableCell>
+                                            <TableCell>
+                                                <Button>
+                                                    <EditIcon color="primary"/>
+                                                </Button>
+                                                <Button>
+                                                    <DeleteIcon sx={{color: "red", ml: 1}}/>
+                                                </Button>
+                                            </TableCell>
                                         </TableRow>
-                                    </TableHead>
-                                    <TableBody>
-                                        {rows.map((row) => (
-                                            <TableRow key={row.id}>
-                                                <TableCell>{row.id}</TableCell>
-                                                <TableCell>{row.date}</TableCell>
-                                                <TableCell>{row.name}</TableCell>
-                                                <TableCell >
-                                                    <Button>
-                                                        <EditIcon color="primary"/>
-                                                    </Button>
-                                                    <Button>
-                                                        <DeleteIcon sx={{color:"red" ,ml:1}} />
-                                                    </Button>
-                                                </TableCell>
-                                            </TableRow>
-                                        ))}
-                                    </TableBody>
-                                </Table>
-                                
+                                    ))}
+                                </TableBody>
+                            </Table>
 
-                            </Paper>
-                        </Grid>
+
+                        </Paper>
                     </Grid>
+                </Grid>
 
-                </Container>
+            </Container>
 
         </React.Fragment>
     );

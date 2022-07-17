@@ -15,7 +15,7 @@ import EditIcon from '@mui/icons-material/Edit';
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
-    return { id, date, name, shipTo, paymentMethod, amount };
+    return {id, date, name, shipTo, paymentMethod, amount};
 }
 
 const rows = [
@@ -63,59 +63,59 @@ export default function Orders() {
         <React.Fragment>
 
 
-                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-                    <Link href="/book/addBook">
-                    <Button sx={{ display:"flex", float:"right"  }}
+            <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
+                <Link href="/book/add">
+                    <Button sx={{display: "flex", float: "right"}}
                             variant="contained"
 
-                            endIcon={<AddIcon />}>
+                            endIcon={<AddIcon/>}>
                         Add Book
                     </Button>
-                      </Link>
-                    <Grid container spacing={1}>
-                        <Grid item xs={12}>
-                            <Paper sx={{ p: 3, display: 'flex', flexDirection: 'column' }}>
+                </Link>
+                <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                        <Paper sx={{p: 3, display: 'flex', flexDirection: 'column'}}>
 
-            <Table size="small">
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Id</TableCell>
-                        <TableCell>Title</TableCell>
-                        <TableCell>Description</TableCell>
-                        <TableCell>Category</TableCell>
-                        <TableCell>Author</TableCell>
-                        <TableCell>Reviews</TableCell>
-                        <TableCell>Actions</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <TableRow key={row.id}>
-                            <TableCell>{row.id}</TableCell>
-                            <TableCell>{row.date}</TableCell>
-                            <TableCell>{row.name}</TableCell>
-                            <TableCell>{row.shipTo}</TableCell>
-                            <TableCell>{row.paymentMethod}</TableCell>
-                            <TableCell >{`$${row.amount}`}</TableCell>
-                            <TableCell >
-                                <Button>
-                                <EditIcon color="primary"/>
-                                </Button>
-                                <Button>
-                                <DeleteIcon sx={{color:"red" ,ml:1}} />
-                                </Button>
-                            </TableCell>
-                        </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
+                            <Table size="small">
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Id</TableCell>
+                                        <TableCell>Title</TableCell>
+                                        <TableCell>Description</TableCell>
+                                        <TableCell>Category</TableCell>
+                                        <TableCell>Author</TableCell>
+                                        <TableCell>Reviews</TableCell>
+                                        <TableCell>Actions</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {rows.map((row) => (
+                                        <TableRow key={row.id}>
+                                            <TableCell>{row.id}</TableCell>
+                                            <TableCell>{row.date}</TableCell>
+                                            <TableCell>{row.name}</TableCell>
+                                            <TableCell>{row.shipTo}</TableCell>
+                                            <TableCell>{row.paymentMethod}</TableCell>
+                                            <TableCell>{`$${row.amount}`}</TableCell>
+                                            <TableCell>
+                                                <Button>
+                                                    <EditIcon color="primary"/>
+                                                </Button>
+                                                <Button>
+                                                    <DeleteIcon sx={{color: "red", ml: 1}}/>
+                                                </Button>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
 
 
-                            </Paper>
-                        </Grid>
+                        </Paper>
                     </Grid>
+                </Grid>
 
-                </Container>
+            </Container>
 
         </React.Fragment>
     );

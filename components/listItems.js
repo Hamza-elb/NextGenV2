@@ -8,35 +8,34 @@ import CategoryIcon from '@mui/icons-material/Category';
 import Link from "next/link";
 
 
-
 export const mainListItems = (
     <React.Fragment>
 
-        <Link href="/"  >
-        <ListItemButton>
-            <ListItemIcon>
-                <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText primary="Dashboard" />
-        </ListItemButton>
+        <Link href="/">
+            <ListItemButton>
+                <ListItemIcon>
+                    <DashboardIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Dashboard"/>
+            </ListItemButton>
         </Link>
 
-        <Link href="/book"  >
-        <ListItemButton>
-            <ListItemIcon>
-                <BookIcon />
-            </ListItemIcon>
-            <ListItemText primary="Books" />
-        </ListItemButton>
+        <Link href="/book">
+            <ListItemButton>
+                <ListItemIcon>
+                    <BookIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Books"/>
+            </ListItemButton>
         </Link>
 
-        <Link href="/category"  >
-        <ListItemButton>
-            <ListItemIcon>
-                <CategoryIcon />
-            </ListItemIcon>
-            <ListItemText primary="Catégories" />
-        </ListItemButton>
+        <Link href="/category">
+            <ListItemButton>
+                <ListItemIcon>
+                    <CategoryIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Catégories"/>
+            </ListItemButton>
         </Link>
 
     </React.Fragment>

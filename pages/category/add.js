@@ -1,17 +1,17 @@
 import * as React from 'react';
 import Container from "@mui/material/Container";
-import {TextField} from "@mui/material";
+import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import SendIcon from '@mui/icons-material/Send';
 import Link from "next/link";
 import Head from "next/head";
+import Grid from "@mui/material/Grid";
 
 
 
-export default function AddBook() {
+export default function AddCategory() {
 
     return (
         <>
@@ -20,7 +20,7 @@ export default function AddBook() {
             </Head>
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <form>
-                    <Box
+                    <Grid
                         sx={{
                             display: 'flex',
                             flexWrap: 'wrap',
@@ -39,7 +39,7 @@ export default function AddBook() {
                         }}
                                noValidate
                                autoComplete="off" >
-                            <div >
+                            <Grid >
                                 <TextField
                                     id="title"
                                     label="Title"
@@ -47,8 +47,8 @@ export default function AddBook() {
                                     maxRows={4}
                                     type="string"
                                 />
-                            </div>
-                            <div>
+                            </Grid>
+                            <Grid>
                                 <TextField
                                     id="slug"
                                     label="Slug"
@@ -56,9 +56,9 @@ export default function AddBook() {
                                     maxRows={4}
                                     type="string"
                                 />
-                            </div>
+                            </Grid>
 
-                            <div >
+                            <Grid >
                                 <Link href="/category">
 
                                     <Button variant="outlined" startIcon={<ArrowBackIcon />} sx={{m:1}} >
@@ -69,10 +69,10 @@ export default function AddBook() {
                                 <Button variant="contained" endIcon={<SendIcon />} sx={{float:"right",m:1}}>
                                     Send
                                 </Button>
-                            </div>
+                            </Grid>
                         </Paper>
 
-                    </Box>
+                    </Grid>
                 </form>
             </Container>
 

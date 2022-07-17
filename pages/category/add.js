@@ -8,7 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Link from "next/link";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
-
+import styled from "../../styles/Home.module.css"
 
 
 export default function AddCategory() {
@@ -18,28 +18,16 @@ export default function AddCategory() {
             <Head>
                 <title>Add Category</title>
             </Head>
-            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+            <Container maxWidth="lg" className={styled.container}>
                 <form>
-                    <Grid
-                        sx={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            '& > :not(style)': {
-                                m: 5,
-                                ml: "auto",
-                                mr: "auto"
-                                ,p:3
-                            },
-                        }}
+                    <Grid className={styled.grid}>
 
-                    >
-
-                        <Paper elevation={12}   sx={{
-                            '& .MuiTextField-root': { m: 1, width: '50ch' },
+                        <Paper elevation={12} sx={{
+                            '& .MuiTextField-root': {m: 1, width: '50ch'},
                         }}
                                noValidate
-                               autoComplete="off" >
-                            <Grid >
+                               autoComplete="off">
+                            <Grid>
                                 <TextField
                                     id="title"
                                     label="Title"
@@ -58,15 +46,15 @@ export default function AddCategory() {
                                 />
                             </Grid>
 
-                            <Grid >
+                            <Grid>
                                 <Link href="/category">
 
-                                    <Button variant="outlined" startIcon={<ArrowBackIcon />} sx={{m:1}} >
+                                    <Button variant="outlined" startIcon={<ArrowBackIcon/>} sx={{m: 1}}>
                                         Back
                                     </Button>
                                 </Link>
 
-                                <Button variant="contained" endIcon={<SendIcon />} sx={{float:"right",m:1}}>
+                                <Button variant="contained" endIcon={<SendIcon/>} sx={{float: "right", m: 1}}>
                                     Send
                                 </Button>
                             </Grid>

@@ -61,8 +61,6 @@ function preventDefault(event) {
 export default function Orders() {
     return (
         <React.Fragment>
-
-
             <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
                 <Link href="/book/add">
                     <Button sx={{display: "flex", float: "right"}}

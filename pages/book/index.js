@@ -9,7 +9,7 @@ export default function Book() {
             <Head>
                 <title>Book</title>
             </Head>
-            <TableBook></TableBook>
+            <TableBook/>
         </>
     )
 

@@ -8,6 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Link from "next/link";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
+import styled from "../../styles/Home.module.css"
 
 
 export default function AddBook() {
@@ -17,21 +18,9 @@ export default function AddBook() {
             <Head>
                 <title>Add Book</title>
             </Head>
-            <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
+            <Container maxWidth="lg" className={styled.container}>
                 <form>
-                    <Grid
-                        sx={{
-                            display: 'flex',
-                            flexWrap: 'wrap',
-                            '& > :not(style)': {
-                                m: 5,
-                                ml: "auto",
-                                mr: "auto"
-                                , p: 3
-                            },
-                        }}
-
-                    >
+                    <Grid className={styled.grid}>
 
                         <Paper elevation={12} sx={{
                             '& .MuiTextField-root': {m: 1, width: '50ch'},

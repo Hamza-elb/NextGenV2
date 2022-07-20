@@ -1,9 +1,8 @@
 const { generateTemplateFilesCommandLine } = require('generate-template-files');
 
-const config = require('C:/Users/lenovo/Desktop/resources.json');
+const config = require('C:/Users/Administrateur/Desktop/JsonFile.json');
 
-
-const items=[
+const items = [
     {
         option: '',
         defaultCase: '(pascalCase)',
@@ -14,7 +13,7 @@ const items=[
 
         ],
         output: {
-            path: 'C:/Users/lenovo/Desktop/__name__(noCase)',
+            path: 'C:/Users/Administrateur/Desktop/__name__(noCase)',
             pathAndFileNameDefaultCase: '(pascalCase)',
             overwrite:true
         },
@@ -23,24 +22,25 @@ const items=[
         }
     }];
 
-generateTemplateFilesCommandLine(items
-);
+generateTemplateFilesCommandLine(items);
+
 const { generateTemplateFilesBatch } = require('generate-template-files');
 
 const componentWithInterface = (modelName) => {
     generateTemplateFilesBatch([
         {
             option: 'model',
-            defaultCase: '(noCase))',
+            defaultCase: '(noCase)',
             entry: {
                 folderPath: './tools/templateModel',
             },
             dynamicReplacers: [
                 { slot: '__model__', slotValue: modelName },
 
+
             ],
             output: {
-                path: 'C:/Users/lenovo/Desktop/'+config.name+'/pages/',
+                path: 'C:/Users/Administrateur/Desktop/'+config.name+'/pages/',
                 pathAndFileNameDefaultCase: '(pascalCase)',
                 overwrite:true
             },
@@ -52,3 +52,4 @@ const componentWithInterface = (modelName) => {
 config.models.map((p)=>{
     return componentWithInterface(p.name);
 })
+

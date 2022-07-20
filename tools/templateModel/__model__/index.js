@@ -4,6 +4,7 @@ import * as React from "react";
 
 export default function Book() {
 
+    __model__
     return (
         <>
             <Head>

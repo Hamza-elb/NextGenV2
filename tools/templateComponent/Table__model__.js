@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from 'next/link';
+import Link from "next/link";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,8 +10,8 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import {Button} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
@@ -61,15 +61,13 @@ function preventDefault(event) {
 export default function Orders() {
     return (
         <React.Fragment>
-
-
             <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
-                <Link href="category/add">
+                <Link href="/__model__(lowerCase)/add">
                     <Button sx={{display: "flex", float: "right"}}
                             variant="contained"
-                            onClick=""
+
                             endIcon={<AddIcon/>}>
-                        Add Category
+                        Add Book
                     </Button>
                 </Link>
                 <Grid container spacing={1}>
@@ -81,7 +79,10 @@ export default function Orders() {
                                     <TableRow>
                                         <TableCell>Id</TableCell>
                                         <TableCell>Title</TableCell>
-                                        <TableCell>Slug</TableCell>
+                                        <TableCell>Description</TableCell>
+                                        <TableCell>Category</TableCell>
+                                        <TableCell>Author</TableCell>
+                                        <TableCell>Reviews</TableCell>
                                         <TableCell>Actions</TableCell>
                                     </TableRow>
                                 </TableHead>
@@ -91,6 +92,9 @@ export default function Orders() {
                                             <TableCell>{row.id}</TableCell>
                                             <TableCell>{row.date}</TableCell>
                                             <TableCell>{row.name}</TableCell>
+                                            <TableCell>{row.shipTo}</TableCell>
+                                            <TableCell>{row.paymentMethod}</TableCell>
+                                            <TableCell>{`$${row.amount}`}</TableCell>
                                             <TableCell>
                                                 <Button>
                                                     <EditIcon color="primary"/>

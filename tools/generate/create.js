@@ -13,7 +13,7 @@ const items = [
 
         ],
         output: {
-            path: 'C:/Users/Administrateur/Desktop/__name__(noCase)',
+            path: 'C:/Users/lenovo/Desktop/__name__(noCase)',
             pathAndFileNameDefaultCase: '(pascalCase)',
             overwrite:true
         },
@@ -32,18 +32,37 @@ const componentWithInterface = (modelName) => {
             option: 'model',
             defaultCase: '(noCase)',
             entry: {
-                folderPath: './tools/templateModel',
+                folderPath: './tools/templateModel/',
             },
             dynamicReplacers: [
                 { slot: '__model__', slotValue: modelName },
 
             ],
             output: {
-                path: 'C:/Users/Administrateur/Desktop/'+config.name+'/pages/',
-                pathAndFileNameDefaultCase: '(pascalCase)',
-                overwrite:true
+                path: 'C:/Users/lenovo/Desktop/' + config.name + '/pages',
+
+                pathAndFileNameDefaultCase: '(lowerCase)',
+                overwrite: true
+            }
+        },
+        {
+            option: 'components',
+            defaultCase: '(pascalCase))',
+            entry: {
+                folderPath: './tools/templateComponent/',
             },
+            dynamicReplacers: [
+                { slot: '__model__', slotValue: modelName },
+
+            ],
+            output: {
+                path: 'C:/Users/lenovo/Desktop/' + config.name + '/components/',
+
+                pathAndFileNameDefaultCase: '(pascalCase)',
+                overwrite: true
+            }
         }
+
     ]).catch(() => {
         console.log('Build Error');
     });

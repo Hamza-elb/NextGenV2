@@ -20,24 +20,20 @@ export const mainListItems = (
             </ListItemButton>
         </Link>
 
-        <Link href="/book">
-            <ListItemButton>
-                <ListItemIcon>
-                    <BookIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Books"/>
-            </ListItemButton>
-        </Link>
+        {createLink(__model__)}
 
-        <Link href="/category">
-            <ListItemButton>
-                <ListItemIcon>
-                    <CategoryIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Catégories"/>
-            </ListItemButton>
-        </Link>
+
 
     </React.Fragment>
 );
 
+const createLink=(model)=>{
+    return( <Link href="/"{model}"(lowerCase)">
+        <ListItemButton>
+            <ListItemIcon>
+                <CategoryIcon/>
+            </ListItemIcon>
+            <ListItemText primary={model}/>
+        </ListItemButton>
+    </Link>)
+}

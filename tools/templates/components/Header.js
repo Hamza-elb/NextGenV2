@@ -23,7 +23,7 @@ function Copyright(props) {
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
             <Link color="inherit" href="#">
-                NextGen App
+                __name__
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -113,7 +113,7 @@ export default function Header(props) {
                         noWrap
                         sx={{flexGrow: 1}}
                     >
-                        NextGen App
+                       __name__
                     </Typography>
                     <IconButton color="inherit">
                         <Badge badgeContent={4} color="secondary">

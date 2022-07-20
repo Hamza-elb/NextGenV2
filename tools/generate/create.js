@@ -9,12 +9,15 @@ generateTemplateFilesCommandLine([
         entry: {
             folderPath: './tools/templates/',
         }, dynamicReplacers: [
-            { slot: '__model__', slotValue: config.models[0].name},
-            {slot:'__store__',slotValue:config.models[1].name
+            { slot: '__name__', slotValue: config.name},
+            {slot:'__models__',slotValue:config.models
             }
         ],
         output: {
-            path: 'C:/Users/lenovo/Desktop/__store__(kebabCase)',
+            path: ['C:/Users/lenovo/Desktop/__name__(kebabCase)',
+                'C:/Users/lenovo/Desktop/__name__/pages/__name__(kebabCase)'
+
+            ],
             pathAndFileNameDefaultCase: '(pascalCase)',
         },
         onComplete: (results) => {

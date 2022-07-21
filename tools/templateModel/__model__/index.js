@@ -2,7 +2,7 @@ import Table__model__(pascalCase) from "../../components/Table__model__(pascalCa
 import Head from "next/head";
 import * as React from "react";
 
-export default function Book() {
+export default function __model__(pascalCase)() {
 
 
     return (

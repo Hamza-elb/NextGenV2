@@ -10,6 +10,8 @@
   "scripts": {
     "generate": "node ./tools/generate.js create-next-app",
     "create": "node ./tools/create.js --overwrite"
-
+  },
+  "dependencies": {
+    "variable-replacer": "^1.6.0"
   }
 }

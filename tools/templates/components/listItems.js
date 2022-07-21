@@ -19,21 +19,9 @@ export const mainListItems = (
                 <ListItemText primary="Dashboard"/>
             </ListItemButton>
         </Link>
-
-        {createLink(__model__)}
+        __items__(noCase)
 
 
 
     </React.Fragment>
 );
-
-const createLink=(model)=>{
-    return( <Link href="/"{model}"(lowerCase)">
-        <ListItemButton>
-            <ListItemIcon>
-                <CategoryIcon/>
-            </ListItemIcon>
-            <ListItemText primary={model}/>
-        </ListItemButton>
-    </Link>)
-}

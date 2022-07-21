@@ -11,13 +11,13 @@ import Grid from "@mui/material/Grid";
 import styled from "../../templates/styles/Home.module.css"
 
 
-export default function Add() {
-
+export default function AddUser() {
+    const model= [object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
 
     return (
         <>
             <Head>
-                <title>Add __model__(pascalCase)</title>
+                <title>Add User</title>
             </Head>
             <Container maxWidth="lg" className={styled.container}>
                 <form>
@@ -70,7 +70,7 @@ export default function Add() {
                                 />
                             </Grid>
                             <Grid>
-                                <Link href="/tools/templates/pages/__model__(lowerCase)">
+                                <Link href="/tools/templates/pages/user">
 
                                     <Button variant="outlined" startIcon={<ArrowBackIcon/>} sx={{m: 1}}>
                                         Back

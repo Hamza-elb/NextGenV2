@@ -58,7 +58,7 @@ function preventDefault(event) {
     event.preventDefault();
 }
 
-export default function Orders() {
+export default function Table__model__(pascalCase)(){
     return (
         <React.Fragment>
             <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>

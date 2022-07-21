@@ -1,6 +1,26 @@
-const { generateTemplateFilesCommandLine } = require('generate-template-files');
+const {generateTemplateFilesCommandLine} = require('generate-template-files');
 
 const config = require('C:/Users/lenovo/Desktop/resources.json');
+const createItems = () => {
+
+    const item = config.models.map((m) => {
+        return createItem(m.name);
+    })
+
+
+    return item.join('');
+}
+const createItem = (m) => {
+    return `<Link href="/` + m + `">
+        <ListItemButton>
+            <ListItemIcon>
+                <CategoryIcon/>
+            </ListItemIcon>
+            <ListItemText primary="` + m + `"/>
+        </ListItemButton>
+    </Link>`
+
+}
 
 const items = [
     {
@@ -10,6 +30,7 @@ const items = [
             folderPath: './tools/templates/',
         }, dynamicReplacers: [
             { slot: '__name__', slotValue: config.name},
+            { slot: '__items__', slotValue: createItems()},
 
         ],
         output: {
@@ -22,9 +43,12 @@ const items = [
         }
     }];
 
+
+
+
 generateTemplateFilesCommandLine(items);
 
-const { generateTemplateFilesBatch } = require('generate-template-files');
+const {generateTemplateFilesBatch} = require('generate-template-files');
 
 const componentWithInterface = (modelName) => {
     generateTemplateFilesBatch([
@@ -35,7 +59,7 @@ const componentWithInterface = (modelName) => {
                 folderPath: './tools/templateModel/',
             },
             dynamicReplacers: [
-                { slot: '__model__', slotValue: modelName },
+                {slot: '__model__', slotValue: modelName},
 
             ],
             output: {
@@ -52,7 +76,7 @@ const componentWithInterface = (modelName) => {
                 folderPath: './tools/templateComponent/',
             },
             dynamicReplacers: [
-                { slot: '__model__', slotValue: modelName },
+                {slot: '__model__', slotValue: modelName},
 
             ],
             output: {
@@ -67,7 +91,8 @@ const componentWithInterface = (modelName) => {
         console.log('Build Error');
     });
 };
-config.models.map((p)=>{
-    return componentWithInterface(p.name);
-})
 
+
+config.models.map((p) => {
+    return (componentWithInterface(p.name));
+})

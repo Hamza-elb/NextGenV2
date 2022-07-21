@@ -67,7 +67,7 @@ export default function Table__model__(pascalCase)(){
                             variant="contained"
 
                             endIcon={<AddIcon/>}>
-                        Add Book
+                        Add __model__(pascalCase)
                     </Button>
                 </Link>
                 <Grid container spacing={1}>
@@ -77,12 +77,7 @@ export default function Table__model__(pascalCase)(){
                             <Table size="small">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Id</TableCell>
-                                        <TableCell>Title</TableCell>
-                                        <TableCell>Description</TableCell>
-                                        <TableCell>Category</TableCell>
-                                        <TableCell>Author</TableCell>
-                                        <TableCell>Reviews</TableCell>
+                                        __header__
                                         <TableCell>Actions</TableCell>
                                     </TableRow>
                                 </TableHead>

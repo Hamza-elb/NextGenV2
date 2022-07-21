@@ -22,6 +22,42 @@ const createItem = (m) => {
 
 }
 
+const createHeader=(nameModel)=>{
+    const header=config.models.map((m)=>{
+        if(m.name==nameModel){
+            return ( m.params.map((p)=>{
+                return`<TableCell>`+p.name+`</TableCell>`
+            }).join(''));
+
+        }
+
+    })
+    return header.join('');
+}
+
+const createGrid=(nameModel)=>{
+    const grid=config.models.map((m)=>{
+        if(m.name==nameModel){
+            return ( m.params.map((p)=>{
+                return` <Grid>
+                                <TextField
+                                    id="`+p.name+`"
+                                    label="`+p.name+`"
+                                    multiline
+                                    maxRows={4}
+                                    type="`+p.type+`"
+                                />
+                            </Grid>`
+            }).join(''));
+
+        }
+
+    })
+    return grid.join('');
+}
+
+
+
 const items = [
     {
         option: '',
@@ -50,7 +86,7 @@ generateTemplateFilesCommandLine(items);
 
 const {generateTemplateFilesBatch} = require('generate-template-files');
 
-const componentWithInterface = (modelName) => {
+const componentWithModel = (modelName) => {
     generateTemplateFilesBatch([
         {
             option: 'model',
@@ -60,6 +96,7 @@ const componentWithInterface = (modelName) => {
             },
             dynamicReplacers: [
                 {slot: '__model__', slotValue: modelName},
+                {slot: '__grid__', slotValue: createGrid(modelName)},
 
             ],
             output: {
@@ -77,6 +114,7 @@ const componentWithInterface = (modelName) => {
             },
             dynamicReplacers: [
                 {slot: '__model__', slotValue: modelName},
+                {slot: '__header__', slotValue: createHeader(modelName)},
 
             ],
             output: {
@@ -94,5 +132,5 @@ const componentWithInterface = (modelName) => {
 
 
 config.models.map((p) => {
-    return (componentWithInterface(p.name));
+    return (componentWithModel(p.name));
 })

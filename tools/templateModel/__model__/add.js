@@ -8,7 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Link from "next/link";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
-import styled from "../../templates/styles/Home.module.css"
+import styled from "../../styles/Home.module.css"
 
 
 export default function Add() {
@@ -28,49 +28,9 @@ export default function Add() {
                         }}
                                noValidate
                                autoComplete="off">
+                            __grid__(noCase)
                             <Grid>
-                                <TextField
-                                    id="title"
-                                    label="Title"
-                                    multiline
-                                    maxRows={4}
-                                    type="string"
-                                />
-                            </Grid>
-                            <Grid>
-                                <TextField
-                                    id="description"
-                                    label="Description"
-                                    multiline
-                                    maxRows={4}
-                                />
-                            </Grid>
-                            <Grid>
-                                <TextField
-                                    id="category"
-                                    label="Category"
-                                    multiline
-                                    maxRows={4}
-                                />
-                            </Grid>
-                            <Grid>
-                                <TextField
-                                    id="author"
-                                    label="Author"
-                                    multiline
-                                    maxRows={4}
-                                />
-                            </Grid>
-                            <Grid>
-                                <TextField
-                                    id="reviews"
-                                    label="Reviews"
-                                    multiline
-                                    maxRows={4}
-                                />
-                            </Grid>
-                            <Grid>
-                                <Link href="/tools/templates/pages/__model__(lowerCase)">
+                                <Link href="/__model__(lowerCase)">
 
                                     <Button variant="outlined" startIcon={<ArrowBackIcon/>} sx={{m: 1}}>
                                         Back

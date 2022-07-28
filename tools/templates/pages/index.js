@@ -9,8 +9,6 @@ export default function Home() {
             <Head>
                 <title>Dashboard</title>
             </Head>
-
-
             <h1 className={style.H1}> Dashboard</h1>
 
         </>

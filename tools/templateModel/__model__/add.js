@@ -11,24 +11,21 @@ import Grid from "@mui/material/Grid";
 import styled from "../../styles/Home.module.css"
 import {useMutation} from "react-query";
 import {add__model__(pascalCase)} from "../../config/helper__model__(pascalCase)";
-import  {useForm} from "react-hook-form";
-
+import {useForm} from "react-hook-form";
 
 
 export default function Add() {
 
-    const { register, handleSubmit, resetField } = useForm();
+    const {register, handleSubmit, resetField} = useForm();
     const addMutation = useMutation(add__model__(pascalCase));
 
     const onSubmit = async (data) => {
-        if(data){
+        if (data) {
             await addMutation.mutate(data);
             console.log("Data Created Successfully");
             __reset__(noCase)
         }
     }
-
-
 
     return (
         <>
@@ -38,7 +35,6 @@ export default function Add() {
             <Container maxWidth="lg" className={styled.container}>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Grid className={styled.grid}>
-
                         <Paper elevation={12} sx={{
                             '& .MuiTextField-root': {m: 1, width: '50ch'},
                         }}
@@ -47,22 +43,20 @@ export default function Add() {
                             __grid__(noCase)
                             <Grid>
                                 <Link href="/__model__(lowerCase)">
-
                                     <Button variant="outlined" startIcon={<ArrowBackIcon/>} sx={{m: 1}}>
                                         Back
                                     </Button>
                                 </Link>
 
-                                <Button type="submit" variant="contained" endIcon={<SendIcon/>} sx={{float: "right", m: 1}}>
+                                <Button type="submit" variant="contained" endIcon={<SendIcon/>}
+                                        sx={{float: "right", m: 1}}>
                                     Send
                                 </Button>
                             </Grid>
                         </Paper>
-
                     </Grid>
                 </form>
             </Container>
-
         </>
     );
 }

@@ -21,7 +21,5 @@ export const mainListItems = (
         </Link>
         __items__(noCase)
 
-
-
     </React.Fragment>
 );

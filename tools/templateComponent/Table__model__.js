@@ -14,7 +14,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import {useMutation, useQuery, useQueryClient} from "react-query";
 import {delete__model__(pascalCase), get__model__(pascalCase), update__model__(pascalCase)} from "../config/helper__model__(pascalCase).js";
-
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -27,7 +26,8 @@ function preventDefault(event) {
     event.preventDefault();
 }
 
-export default function Table__model__(pascalCase)() {
+export default function Table__model__(pascalCase)()
+{
 
     const [open, setOpen] = React.useState(false);
     const [allData, setAllData] = React.useState('');
@@ -45,6 +45,7 @@ export default function Table__model__(pascalCase)() {
     const {status, data} = useQuery('__model__(lowerCase)s', get__model__(pascalCase))
     const {register, handleSubmit, resetField} = useForm();
     const queryClient = useQueryClient();
+
     const deleteMutation = useMutation(delete__model__(pascalCase), {
         onSuccess: () =>
             queryClient.invalidateQueries('__model__(lowerCase)s')
@@ -63,6 +64,7 @@ export default function Table__model__(pascalCase)() {
             console.log("Deleted successfully");
         }
     }
+
     const onSubmit = async (da) => {
         await editMutation.mutate(da, {onSuccess: () => queryClient.invalidateQueries()})
         await handleClose();
@@ -82,7 +84,6 @@ export default function Table__model__(pascalCase)() {
                 <Grid container spacing={1}>
                     <Grid item xs={12}>
                         <Paper sx={{p: 3, display: 'flex', flexDirection: 'column'}}>
-
                             <Table size="small">
                                 <TableHead>
                                     <TableRow>
@@ -92,19 +93,19 @@ export default function Table__model__(pascalCase)() {
                                 </TableHead>
                                 {status === 'success' && data.map((p) => {
                                     return (
-                                <TableBody key={p.id}>
+                                        <TableBody key={p.id}>
                                             __body__(noCase)
-                                    <TableCell>
-                                        <Button onClick={() => handleOpen(p)}>
-                                            <EditIcon color="primary"/>
-                                        </Button>
-
-                                        <Button onClick={() => handleClick(p.id)}>
-                                            <DeleteIcon sx={{color: "red", ml: 1}}/>
-                                        </Button>
-                                    </TableCell>
-                                </TableBody>
-                                    )})}
+                                            <TableCell>
+                                                <Button onClick={() => handleOpen(p)}>
+                                                    <EditIcon color="primary"/>
+                                                </Button>
+                                                <Button onClick={() => handleClick(p.id)}>
+                                                    <DeleteIcon sx={{color: "red", ml: 1}}/>
+                                                </Button>
+                                            </TableCell>
+                                        </TableBody>
+                                    )
+                                })}
                             </Table>
 
                             <Modal
@@ -113,44 +114,36 @@ export default function Table__model__(pascalCase)() {
                                 aria-labelledby="modal-modal-title"
                                 aria-describedby="modal-modal-description"
                             >
-                                <Container maxWidth="lg" className={styled.container} >
-
-                                    <Grid className={styled.grid} >
-
+                                <Container maxWidth="lg" className={styled.container}>
+                                    <Grid className={styled.grid}>
                                         <Paper elevation={12} sx={{
-                                            '& .MuiTextField-root': {m:1, width: '50ch'},
+                                            '& .MuiTextField-root': {m: 1, width: '50ch'},
                                         }}
                                                noValidate
                                                autoComplete="off">
-                                    <form onSubmit={handleSubmit(onSubmit)}>
-
-                                        <input
-                                            id="id"
-                                            label="id"
-                                            multiline
-                                            maxRows={4}
-                                            type="hidden"
-                                            defaultValue={allData.id}
-                                            {...register('id')}
-                                        />
-
-                                        __form__(noCase)
-
-                                        <Grid>
-                                            <Button onClick={handleClose} variant="outlined" startIcon={<ArrowBackIcon/>}
-                                                    sx={{float: "left", m: 1}}>
-                                                Back
-                                            </Button>
-
-
-                                            <Button type="submit" variant="contained"
-                                                    endIcon={<SendIcon/>} sx={{float: "right", m: 1}}>
-                                                Update
-                                            </Button>
-                                        </Grid>
-
-
-                                    </form>
+                                            <form onSubmit={handleSubmit(onSubmit)}>
+                                                <input
+                                                    id="id"
+                                                    label="id"
+                                                    multiline
+                                                    maxRows={4}
+                                                    type="hidden"
+                                                    defaultValue={allData.id}
+                                                    {...register('id')}
+                                                />
+                                                __form__(noCase)
+                                                <Grid>
+                                                    <Button onClick={handleClose} variant="outlined"
+                                                            startIcon={<ArrowBackIcon/>}
+                                                            sx={{float: "left", m: 1}}>
+                                                        Back
+                                                    </Button>
+                                                    <Button type="submit" variant="contained"
+                                                            endIcon={<SendIcon/>} sx={{float: "right", m: 1}}>
+                                                        Update
+                                                    </Button>
+                                                </Grid>
+                                            </form>
                                         </Paper>
                                     </Grid>
                                 </Container>
@@ -158,10 +151,7 @@ export default function Table__model__(pascalCase)() {
                         </Paper>
                     </Grid>
                 </Grid>
-
             </Container>
-
-
         </React.Fragment>
     );
 }

@@ -39,8 +39,8 @@ const createGrid = (nameModel) => {
     const grid = config.models.map((m) => {
         if (m.name == nameModel) {
             return (m.params.map((p) => {
-                if(p.name != 'id')
-                return `<Grid>
+                if (p.name != 'id')
+                    return `<Grid>
                                 <TextField
                                     id="` + p.name + `"
                                     label="` + p.name + `"
@@ -62,22 +62,20 @@ const createReset = (nameModel) => {
     const res = config.models.map((m) => {
         if (m.name == nameModel) {
             return (m.params.map((p) => {
-                if(p.name != 'id')
-                return`
-                    resetField(' ` + p.name + ` ');
-                `
+                if (p.name != 'id')
+                    return `resetField('` + p.name + `');`
             }).join(''));
         }
 
     })
-        return  res.join('');
+    return res.join('');
 }
 
 const createBody = (nameModel) => {
     const body = config.models.map((m) => {
         if (m.name == nameModel) {
             return (m.params.map((p) => {
-                return `<TableCell> {p.` + p.name + ` }</TableCell>`
+                return `<TableCell> {p.`+p.name+`}</TableCell>`
             }).join(''));
 
         }
@@ -92,7 +90,7 @@ const createForm = (nameModel) => {
     const grid = config.models.map((m) => {
         if (m.name == nameModel) {
             return (m.params.map((p) => {
-                if(p.name != 'id')
+                if (p.name != 'id')
                     return `<Grid>
                                 <TextField
                                     id="` + p.name + `"
@@ -100,7 +98,7 @@ const createForm = (nameModel) => {
                                     multiline
                                     maxRows={4}
                                     type="` + p.type + `"
-                                    defaultValue={allData. ` + p.name + `}
+                                    defaultValue={allData.`+p.name+`}
                                     {...register('` + p.name + `')}
                                 />
                             </Grid>`
@@ -113,14 +111,13 @@ const createForm = (nameModel) => {
 }
 
 
-
 const items = [{
     option: '', defaultCase: '(pascalCase)', entry: {
         folderPath: './tools/templates/',
     }, dynamicReplacers: [{slot: '__name__', slotValue: config.name}, {slot: '__items__', slotValue: createItems()},
 
     ], output: {
-        path: 'C:/Users/lenovo/Desktop/__name__(noCase)',
+        path: 'C:/Users/Administrateur/Desktop/__name__(noCase)',
         pathAndFileNameDefaultCase: '(pascalCase)',
         overwrite: true
     }, onComplete: (results) => {
@@ -148,7 +145,7 @@ const componentWithModel = (modelName) => {
 
         ],
         output: {
-            path: 'C:/Users/lenovo/Desktop/' + config.name + '/pages',
+            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/pages',
 
             pathAndFileNameDefaultCase: '(lowerCase)', overwrite: true
         }
@@ -168,7 +165,7 @@ const componentWithModel = (modelName) => {
 
         ],
         output: {
-            path: 'C:/Users/lenovo/Desktop/' + config.name + '/components/',
+            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/components/',
 
             pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
         }
@@ -179,7 +176,7 @@ const componentWithModel = (modelName) => {
 
 
         ], output: {
-            path: 'C:/Users/lenovo/Desktop/' + config.name + '/config/',
+            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/config/',
 
             pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
         }

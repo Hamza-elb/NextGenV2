@@ -113,7 +113,7 @@ export default function Header(props) {
                         noWrap
                         sx={{flexGrow: 1}}
                     >
-                       __name__
+                        __name__
                     </Typography>
                     <IconButton color="inherit">
                         <Badge badgeContent={4} color="secondary">
@@ -155,7 +155,6 @@ export default function Header(props) {
                 <Toolbar/>
 
                 {props.children}
-
 
             </Box>
         </Box>

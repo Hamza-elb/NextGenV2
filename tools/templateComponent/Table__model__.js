@@ -12,53 +12,61 @@ import {Button} from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import {useMutation, useQuery, useQueryClient} from "react-query";
+import {delete__model__(pascalCase), get__model__(pascalCase), update__model__(pascalCase)} from "../config/helper__model__(pascalCase).js";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import SendIcon from "@mui/icons-material/Send";
+import {useForm} from "react-hook-form";
+import styled from "../styles/Home.module.css";
 
-// Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-    return {id, date, name, shipTo, paymentMethod, amount};
-}
-
-const rows = [
-    createData(
-        0,
-        '16 Mar, 2019',
-        'Elvis Presley',
-        'Tupelo, MS',
-        'VISA ⠀•••• 3719',
-        312.44,
-    ),
-    createData(
-        1,
-        '16 Mar, 2019',
-        'Paul McCartney',
-        'London, UK',
-        'VISA ⠀•••• 2574',
-        866.99,
-    ),
-    createData(2, '16 Mar, 2019', 'Tom Scholz', 'Boston, MA', 'MC ⠀•••• 1253', 100.81),
-    createData(
-        3,
-        '16 Mar, 2019',
-        'Michael Jackson',
-        'Gary, IN',
-        'AMEX ⠀•••• 2000',
-        654.39,
-    ),
-    createData(
-        4,
-        '15 Mar, 2019',
-        'Bruce Springsteen',
-        'Long Branch, NJ',
-        'VISA ⠀•••• 5919',
-        212.79,
-    ),
-];
 
 function preventDefault(event) {
     event.preventDefault();
 }
 
-export default function Table__model__(pascalCase)(){
+export default function Table__model__(pascalCase)() {
+
+    const [open, setOpen] = React.useState(false);
+    const [allData, setAllData] = React.useState('');
+
+    async function handleOpen(allData) {
+        setOpen(true);
+        setAllData(allData);
+    }
+
+    async function handleClose() {
+        setOpen(false)
+        __reset__(noCase)
+    }
+
+    const {status, data} = useQuery('__model__s(lowerCase)', get__model__(pascalCase))
+    const {register, handleSubmit, resetField} = useForm();
+    const queryClient = useQueryClient();
+    const deleteMutation = useMutation(delete__model__(pascalCase), {
+        onSuccess: () =>
+            queryClient.invalidateQueries('__model__s(lowerCase)')
+
+    })
+
+    const editMutation = useMutation((d,) => update__model__(pascalCase)(d.id, d), {
+        onSuccess: () =>
+            queryClient.invalidateQueries('__model__s(lowerCase)')
+
+    });
+
+    async function handleClick(e) {
+        if (e) {
+            await deleteMutation.mutate(e);
+            console.log("Deleted successfully");
+        }
+    }
+    const onSubmit = async (da) => {
+        await editMutation.mutate(da, {onSuccess: () => queryClient.invalidateQueries()})
+        await handleClose();
+    }
+
     return (
         <React.Fragment>
             <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
@@ -81,34 +89,42 @@ export default function Table__model__(pascalCase)(){
                                         <TableCell>Actions</TableCell>
                                     </TableRow>
                                 </TableHead>
-                                <TableBody>
-                                    {rows.map((row) => (
-                                        <TableRow key={row.id}>
-                                            <TableCell>{row.id}</TableCell>
-                                            <TableCell>{row.date}</TableCell>
-                                            <TableCell>{row.name}</TableCell>
-                                            <TableCell>{row.shipTo}</TableCell>
-                                            <TableCell>{row.paymentMethod}</TableCell>
-                                            <TableCell>{`$${row.amount}`}</TableCell>
-                                            <TableCell>
-                                                <Button>
-                                                    <EditIcon color="primary"/>
-                                                </Button>
-                                                <Button>
-                                                    <DeleteIcon sx={{color: "red", ml: 1}}/>
-                                                </Button>
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
+                                {status === 'success' && data.map((p) => {
+                                    return (
+                                <TableBody key={p.id}>
+                                            __body__(noCase)
+                                    <TableCell>
+                                        <Button onClick={() => handleOpen(p)}>
+                                            <EditIcon color="primary"/>
+                                        </Button>
+
+                                        <Button onClick={() => handleClick(p.id)}>
+                                            <DeleteIcon sx={{color: "red", ml: 1}}/>
+                                        </Button>
+                                    </TableCell>
                                 </TableBody>
+                                    )})}
                             </Table>
-
-
                         </Paper>
                     </Grid>
                 </Grid>
 
             </Container>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box className={styled.box}>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+
+                        __form__(noCase)
+
+
+                    </form>
+                </Box>
+            </Modal>
 
         </React.Fragment>
     );

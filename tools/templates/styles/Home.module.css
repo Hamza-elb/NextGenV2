@@ -19,3 +19,18 @@
     margin-top: auto;
     margin-bottom: auto;
 }
+
+
+.box {
+
+    margin-left: 30%;
+    margin-top: 100px;
+    margin-right: 35%;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}

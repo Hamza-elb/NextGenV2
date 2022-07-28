@@ -53,7 +53,7 @@ export default function Add() {
                                     </Button>
                                 </Link>
 
-                                <Button variant="contained" endIcon={<SendIcon/>} sx={{float: "right", m: 1}}>
+                                <Button type="submit" variant="contained" endIcon={<SendIcon/>} sx={{float: "right", m: 1}}>
                                     Send
                                 </Button>
                             </Grid>

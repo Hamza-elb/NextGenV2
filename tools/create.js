@@ -1,6 +1,6 @@
 const {generateTemplateFilesCommandLine} = require('generate-template-files');
 
-const config = require('C:/Users/Administrateur/Desktop/JsonFile.json');
+const config = require('C:/Users/lenovo/Desktop/resources.json');
 const createItems = () => {
 
     const item = config.models.map((m) => {
@@ -120,7 +120,7 @@ const items = [{
     }, dynamicReplacers: [{slot: '__name__', slotValue: config.name}, {slot: '__items__', slotValue: createItems()},
 
     ], output: {
-        path: 'C:/Users/Administrateur/Desktop/__name__(noCase)',
+        path: 'C:/Users/lenovo/Desktop/__name__(noCase)',
         pathAndFileNameDefaultCase: '(pascalCase)',
         overwrite: true
     }, onComplete: (results) => {
@@ -148,7 +148,7 @@ const componentWithModel = (modelName) => {
 
         ],
         output: {
-            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/pages',
+            path: 'C:/Users/lenovo/Desktop/' + config.name + '/pages',
 
             pathAndFileNameDefaultCase: '(lowerCase)', overwrite: true
         }
@@ -168,7 +168,7 @@ const componentWithModel = (modelName) => {
 
         ],
         output: {
-            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/components/',
+            path: 'C:/Users/lenovo/Desktop/' + config.name + '/components/',
 
             pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
         }
@@ -179,7 +179,7 @@ const componentWithModel = (modelName) => {
 
 
         ], output: {
-            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/config/',
+            path: 'C:/Users/lenovo/Desktop/' + config.name + '/config/',
 
             pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
         }

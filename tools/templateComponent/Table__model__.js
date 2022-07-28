@@ -8,13 +8,14 @@ import TableRow from '@mui/material/TableRow';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import {Button} from "@mui/material";
+import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import {useMutation, useQuery, useQueryClient} from "react-query";
 import {delete__model__(pascalCase), get__model__(pascalCase), update__model__(pascalCase)} from "../config/helper__model__(pascalCase).js";
-import Box from "@mui/material/Box";
+
+import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import SendIcon from "@mui/icons-material/Send";
@@ -41,18 +42,18 @@ export default function Table__model__(pascalCase)() {
         __reset__(noCase)
     }
 
-    const {status, data} = useQuery('__model__s(lowerCase)', get__model__(pascalCase))
+    const {status, data} = useQuery('__model__(lowerCase)s', get__model__(pascalCase))
     const {register, handleSubmit, resetField} = useForm();
     const queryClient = useQueryClient();
     const deleteMutation = useMutation(delete__model__(pascalCase), {
         onSuccess: () =>
-            queryClient.invalidateQueries('__model__s(lowerCase)')
+            queryClient.invalidateQueries('__model__(lowerCase)s')
 
     })
 
     const editMutation = useMutation((d,) => update__model__(pascalCase)(d.id, d), {
         onSuccess: () =>
-            queryClient.invalidateQueries('__model__s(lowerCase)')
+            queryClient.invalidateQueries('__model__(lowerCase)s')
 
     });
 
@@ -105,26 +106,61 @@ export default function Table__model__(pascalCase)() {
                                 </TableBody>
                                     )})}
                             </Table>
+
+                            <Modal
+                                open={open}
+                                onClose={handleClose}
+                                aria-labelledby="modal-modal-title"
+                                aria-describedby="modal-modal-description"
+                            >
+                                <Container maxWidth="lg" className={styled.container} >
+
+                                    <Grid className={styled.grid} >
+
+                                        <Paper elevation={12} sx={{
+                                            '& .MuiTextField-root': {m:1, width: '50ch'},
+                                        }}
+                                               noValidate
+                                               autoComplete="off">
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+
+                                        <input
+                                            id="id"
+                                            label="id"
+                                            multiline
+                                            maxRows={4}
+                                            type="hidden"
+                                            defaultValue={allData.id}
+                                            {...register('id')}
+                                        />
+
+                                        __form__(noCase)
+
+                                        <Grid>
+                                            <Button onClick={handleClose} variant="outlined" startIcon={<ArrowBackIcon/>}
+                                                    sx={{float: "left", m: 1}}>
+                                                Back
+                                            </Button>
+
+
+                                            <Button type="submit" variant="contained"
+                                                    endIcon={<SendIcon/>} sx={{float: "right", m: 1}}>
+                                                Update
+                                            </Button>
+                                        </Grid>
+
+
+                                    </form>
+                                        </Paper>
+                                    </Grid>
+                                </Container>
+                            </Modal>
                         </Paper>
                     </Grid>
                 </Grid>
 
             </Container>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-                <Box className={styled.box}>
-                    <form onSubmit={handleSubmit(onSubmit)}>
 
-                        __form__(noCase)
-
-
-                    </form>
-                </Box>
-            </Modal>
 
         </React.Fragment>
     );

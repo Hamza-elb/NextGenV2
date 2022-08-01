@@ -91,7 +91,7 @@ export default function Table__model__(pascalCase)()
                                         <TableCell>Actions</TableCell>
                                     </TableRow>
                                 </TableHead>
-                                {status === 'success' && data.map((p) => {
+                                {status === 'success' && data!=null && data.map((p) => {
                                     return (
                                         <TableBody key={p.id}>
                                             __body__(noCase)

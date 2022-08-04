@@ -17,7 +17,7 @@ const items = [{
 
     ],
     output: {
-        path: 'C:/Users/lenovo/Desktop/__name__(noCase)', pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
+        path: 'C:/Users/Administrateur/Desktop/__name__(noCase)', pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
     },
     onComplete: (results) => {
         console.log(`results`, results);
@@ -38,7 +38,7 @@ const componentWithModel = (modelName) => {
         }, {slot: '__reset__', slotValue: createReset(config, modelName)}
 
         ], output: {
-            path: 'C:/Users/lenovo/Desktop/' + config.name + '/pages',
+            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/pages',
 
             pathAndFileNameDefaultCase: '(lowerCase)', overwrite: true
         }
@@ -52,7 +52,7 @@ const componentWithModel = (modelName) => {
         }, {slot: '__form__', slotValue: createForm(config, modelName)}
 
         ], output: {
-            path: 'C:/Users/lenovo/Desktop/' + config.name + '/components/',
+            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/components/',
 
             pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
         }
@@ -63,7 +63,7 @@ const componentWithModel = (modelName) => {
 
 
         ], output: {
-            path: 'C:/Users/lenovo/Desktop/' + config.name + '/config/',
+            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/config/',
 
             pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
         }

@@ -9,9 +9,11 @@
   },
   "scripts": {
     "generate": "node tools/generate/generate.js create-next-app",
-    "create": "node tools/generate/create.js --overwrite"
+    "create": "node tools/generate/create.js --overwrite",
+    "start": "concurrently \"node tools/generate/generate.js create-next-app\" \"node tools/generate/create.js --overwrite\"  "
   },
   "dependencies": {
+    "concurrently": "^7.3.0",
     "variable-replacer": "^1.6.0"
   }
 }

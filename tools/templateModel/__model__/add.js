@@ -8,10 +8,11 @@ import SendIcon from '@mui/icons-material/Send';
 import Link from "next/link";
 import Head from "next/head";
 import Grid from "@mui/material/Grid";
-import styled from "../../styles/Home.module.css"
-import {useMutation} from "react-query";
-import {add__model__(pascalCase)} from "../../config/helper__model__(pascalCase)";
 import {useForm} from "react-hook-form";
+import {useMutation} from "react-query";
+import styled from "../../styles/Home.module.css"
+import {add__model__(pascalCase)} from "../../config/helper__model__(pascalCase)";
+
 
 
 export default function Add() {

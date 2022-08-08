@@ -13,12 +13,12 @@ import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import {useMutation, useQuery, useQueryClient} from "react-query";
-import {delete__model__(pascalCase), get__model__(pascalCase), update__model__(pascalCase)} from "../config/helper__model__(pascalCase).js";
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import SendIcon from "@mui/icons-material/Send";
 import {useForm} from "react-hook-form";
+import {delete__model__(pascalCase), get__model__(pascalCase), update__model__(pascalCase)} from "../config/helper__model__(pascalCase).js";
 import styled from "../styles/Home.module.css";
 
 

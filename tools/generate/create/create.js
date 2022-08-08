@@ -6,7 +6,6 @@ const config = require('__chemin__');
 
 const {createGrid, createReset, createHeader, createBody, createForm} = require('./createCode')
 
-
 const items = [{
     option: '',
     defaultCase: '(pascalCase)',

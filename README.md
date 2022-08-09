@@ -21,93 +21,95 @@ D'abord, Dans le terminal, tapez:
 
 ## Config exemple
 
+```json
 {
-"name": "NextGen",
-"models": [
-{
-"name": "user",
-"params": [
-{
-"name": "id",
-"type": "number"
-},
-{
-"name": "title",
-"type": "string"
-},
-{
-"name": "description",
-"type": "string"
-},
-{
-"name": "category",
-"type": "string"
-},
-{
-"name": "author",
-"type": "string"
-},
-{
-"name": "reviews",
-"type": "string"
+  "name": "NextGen",
+  "models": [
+    {
+      "name": "user",
+      "params": [
+        {
+          "name": "id",
+          "type": "number"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "category",
+          "type": "string"
+        },
+        {
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "name": "reviews",
+          "type": "string"
+        }
+      ],
+      "api": {
+        "get": "/book",
+        "delete": "/book/@id",
+        "put": "/book",
+        "post": "/book/@id"
+      }
+    },
+    {
+      "name": "admin",
+      "params": [
+        {
+          "name": "id",
+          "type": "number"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "slug",
+          "type": "string"
+        }
+      ],
+      "api": {
+        "get": "/category",
+        "delete": "/category/@id",
+        "put": "/category",
+        "post": "/category/@id"
+      }
+    },
+    {
+      "name": "prof",
+      "params": [
+        {
+          "name": "id",
+          "type": "number"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "phone",
+          "type": "string"
+        }
+      ],
+      "api": {
+        "get": "/category",
+        "delete": "/category/@id",
+        "put": "/category",
+        "post": "/category/@id"
+      }
+    }
+  ]
 }
-],
-"api": {
-"get": "/book",
-"delete": "/book/@id",
-"put": "/book",
-"post": "/book/@id"
-}
-},
-{
-"name": "admin",
-"params": [
-{
-"name": "id",
-"type": "number"
-},
-{
-"name": "title",
-"type": "string"
-},
-{
-"name": "slug",
-"type": "string"
-}
-],
-"api": {
-"get": "/category",
-"delete": "/category/@id",
-"put": "/category",
-"post": "/category/@id"
-}
-},
-{
-"name": "prof",
-"params": [
-{
-"name": "id",
-"type": "number"
-},
-{
-"name": "title",
-"type": "string"
-},
-{
-"name": "name",
-"type": "string"
-},
-{
-"name": "phone",
-"type": "string"
-}
-],
-"api": {
-"get": "/category",
-"delete": "/category/@id",
-"put": "/category",
-"post": "/category/@id"
-}
-}
-]
-}
+```

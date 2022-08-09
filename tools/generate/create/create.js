@@ -16,7 +16,7 @@ const items = [{
 
     ],
     output: {
-        path: 'C:/Users/Administrateur/Desktop/__name__(noCase)', pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
+        path: '__cheminProjet__/__name__(noCase)', pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
     },
     onComplete: (results) => {
         console.log(`results`, results);
@@ -37,7 +37,7 @@ const componentWithModel = (modelName) => {
         }, {slot: '__reset__', slotValue: createReset(config, modelName)}
 
         ], output: {
-            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/pages',
+            path: '__cheminProjet__/' + config.name + '/pages',
 
             pathAndFileNameDefaultCase: '(lowerCase)', overwrite: true
         }
@@ -51,7 +51,7 @@ const componentWithModel = (modelName) => {
         }, {slot: '__form__', slotValue: createForm(config, modelName)}
 
         ], output: {
-            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/components/',
+            path: '__cheminProjet__/' + config.name + '/components/',
 
             pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
         }
@@ -62,7 +62,7 @@ const componentWithModel = (modelName) => {
 
 
         ], output: {
-            path: 'C:/Users/Administrateur/Desktop/' + config.name + '/config/',
+            path: '__cheminProjet__/' + config.name + '/config/',
 
             pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
         }

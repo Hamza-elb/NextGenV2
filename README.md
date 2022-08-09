@@ -3,20 +3,21 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 
 ## Getting Started
 
-D'abord, Dans ./tools/generate/create/create.js :
+D'abord, Dans le terminal, tapez:
 
-output: {
-path: 'C:/Users/Administrateur/Desktop/__name__(noCase)',
-pathAndFileNameDefaultCase: '(pascalCase)', overwrite: true
-},
+```bash
 
-=> Mettez le chemin ou le projet sera créé dans tous les outputs.
-
-Après, dans le terminal, tapez :
-
-    $ npm run generate __chemin__="(chemin de fichier json)"
-
+    $ npm run generate 
+    
+=> On répond sur les questions : 
+    -  What do you want to generate? ... (Tapez enter)
+    -  Donner le chemin du fichier config : » 
+    -  Donner le chemin du projet où il sera créé : »
+    -  Output path: » ./tools/generate ... (Tapez enter)
+    
     $ npm run create
+
+```
 
 ## Config exemple
 

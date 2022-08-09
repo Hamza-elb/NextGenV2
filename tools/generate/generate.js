@@ -1,5 +1,5 @@
-const {generateTemplateFilesCommandLine} = require("generate-template-files");
-generateTemplateFilesCommandLine(
+const {generateTemplateFiles} = require("generate-template-files");
+generateTemplateFiles(
     [
         {
             option: 'create next app',
@@ -8,7 +8,10 @@ generateTemplateFilesCommandLine(
                 folderPath: './tools/generate/create',
             }
             ,
-            stringReplacers: ['__chemin__'],
+            stringReplacers: [
+                {question : 'Donner le chemin du fichier config :', slot:'__chemin__'},
+                {question : 'Donner le chemin du projet où il sera créé :', slot:'__cheminProjet__'}
+            ],
 
             output: {
                 path:'./tools/generate',
